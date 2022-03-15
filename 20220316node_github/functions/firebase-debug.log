@@ -1,0 +1,529 @@
+[debug] [2022-03-15T13:51:02.375Z] ----------------------------------------------------------------------
+[debug] [2022-03-15T13:51:02.376Z] Command:       /usr/local/bin/node /usr/local/bin/firebase serve -p 5001
+[debug] [2022-03-15T13:51:02.377Z] CLI Version:   10.2.2
+[debug] [2022-03-15T13:51:02.377Z] Platform:      darwin
+[debug] [2022-03-15T13:51:02.377Z] Node Version:  v16.14.0
+[debug] [2022-03-15T13:51:02.378Z] Time:          Tue Mar 15 2022 22:51:02 GMT+0900 (日本標準時)
+[debug] [2022-03-15T13:51:02.378Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-03-15T13:51:02.427Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-03-15T13:51:02.427Z] > authorizing via signed-in user (ruihiro0609@gmail.com)
+[debug] [2022-03-15T13:51:02.427Z] [iam] checking project cloudfunctions-a1e6e for permissions ["firebase.projects.get"]
+[debug] [2022-03-15T13:51:02.428Z] > refreshing access token with scopes: []
+[debug] [2022-03-15T13:51:02.429Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2022-03-15T13:51:02.807Z] <<< HTTP RESPONSE 200 {"date":"Tue, 15 Mar 2022 13:51:02 GMT","cache-control":"no-cache, no-store, max-age=0, must-revalidate","pragma":"no-cache","expires":"Mon, 01 Jan 1990 00:00:00 GMT","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2022-03-15T13:51:02.860Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/cloudfunctions-a1e6e:testIamPermissions [none]
+[debug] [2022-03-15T13:51:02.861Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/cloudfunctions-a1e6e:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2022-03-15T13:51:03.934Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/cloudfunctions-a1e6e:testIamPermissions 200
+[debug] [2022-03-15T13:51:03.934Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/cloudfunctions-a1e6e:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2022-03-15T13:51:03.937Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/cloudfunctions-a1e6e [none]
+[debug] [2022-03-15T13:51:04.523Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/cloudfunctions-a1e6e 200
+[debug] [2022-03-15T13:51:04.523Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/cloudfunctions-a1e6e {"projectId":"cloudfunctions-a1e6e","projectNumber":"662604117194","displayName":"20200601cloudfunctions","name":"projects/cloudfunctions-a1e6e","resources":{"hostingSite":"cloudfunctions-a1e6e"},"state":"ACTIVE"}
+[info] 
+[info] === Serving from '/Users/tanaka/Desktop/20200601cloudfunctions'...
+[info] 
+[info] ✔  functions: Using node@16 from host. {"metadata":{"emulator":{"name":"functions"},"message":"Using node@16 from host."}}
+[debug] [2022-03-15T13:51:04.538Z] defaultcredentials: writing to file /Users/tanaka/.config/firebase/ruihiro0609_gmail_com_application_default_credentials.json
+[debug] [2022-03-15T13:51:04.541Z] Setting GAC to /Users/tanaka/.config/firebase/ruihiro0609_gmail_com_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to /Users/tanaka/.config/firebase/ruihiro0609_gmail_com_application_default_credentials.json"}}
+[debug] [2022-03-15T13:51:04.543Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/cloudfunctions-a1e6e/adminSdkConfig [none]
+[debug] [2022-03-15T13:51:05.052Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/cloudfunctions-a1e6e/adminSdkConfig 200
+[debug] [2022-03-15T13:51:05.053Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/cloudfunctions-a1e6e/adminSdkConfig {"projectId":"cloudfunctions-a1e6e","storageBucket":"cloudfunctions-a1e6e.appspot.com"}
+[info] i  functions: Watching "/Users/tanaka/Desktop/20200601cloudfunctions/functions" for Cloud Functions... {"metadata":{"emulator":{"name":"functions"},"message":"Watching \"/Users/tanaka/Desktop/20200601cloudfunctions/functions\" for Cloud Functions..."}}
+[debug] [2022-03-15T13:51:05.105Z] Validating nodejs source
+[debug] [2022-03-15T13:51:06.487Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.3",
+    "firebase-admin": "^10.0.2",
+    "firebase-functions": "^3.18.0",
+    "request": "^2.88.2",
+    "request-promise-native": "^1.0.9"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^0.2.0"
+  },
+  "private": true
+}
+[debug] [2022-03-15T13:51:06.488Z] Building nodejs source
+[debug] [2022-03-15T13:51:06.489Z] Analyzing nodejs backend spec
+[info] ✔  functions[asia-northeast1-api]: http function initialized (http://localhost:5001/cloudfunctions-a1e6e/asia-northeast1/api). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://localhost:5001/cloudfunctions-a1e6e/asia-northeast1/api)."}}
+[debug] [2022-03-15T13:51:23.896Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2022-03-15T13:51:23.896Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2022-03-15T13:51:23.897Z] Accepted request GET /cloudfunctions-a1e6e/asia-northeast1/api/weather --> asia-northeast1-api
+[debug] [2022-03-15T13:51:23.908Z] [worker-pool] addWorker(asia-northeast1-api) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] addWorker(asia-northeast1-api)"}}
+[debug] [2022-03-15T13:51:23.909Z] [worker-pool] Adding worker with key asia-northeast1-api, total=1 {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] Adding worker with key asia-northeast1-api, total=1"}}
+[debug] [2022-03-15T13:51:23.909Z] [worker-pool] submitWork(triggerId=asia-northeast1-api) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitWork(triggerId=asia-northeast1-api)"}}
+[debug] [2022-03-15T13:51:23.910Z] [worker-asia-northeast1-api-9edf5cb8-fcf7-40e8-922f-f1e085deaf9b]: Assigning socketPath: /var/folders/_j/hg5k97ln6_s_g__kzdm_9hjm0000gn/T/fire_emu_32501.sock {"metadata":{"emulator":{"name":"functions"},"message":"[worker-asia-northeast1-api-9edf5cb8-fcf7-40e8-922f-f1e085deaf9b]: Assigning socketPath: /var/folders/_j/hg5k97ln6_s_g__kzdm_9hjm0000gn/T/fire_emu_32501.sock"}}
+[debug] [2022-03-15T13:51:23.910Z] [worker-asia-northeast1-api-9edf5cb8-fcf7-40e8-922f-f1e085deaf9b]: BUSY {"metadata":{"emulator":{"name":"functions"},"message":"[worker-asia-northeast1-api-9edf5cb8-fcf7-40e8-922f-f1e085deaf9b]: BUSY"}}
+[debug] [2022-03-15T13:51:24.557Z] [runtime-status] [32501] Functions runtime initialized. {"cwd":"/Users/tanaka/Desktop/20200601cloudfunctions/functions","node_version":"16.14.0"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-northeast1-api"},"extension":{},"message":"[runtime-status] [32501] Functions runtime initialized. {\"cwd\":\"/Users/tanaka/Desktop/20200601cloudfunctions/functions\",\"node_version\":\"16.14.0\"}"}}
+[debug] [2022-03-15T13:51:24.557Z] [runtime-status] [32501] Disabled runtime features: undefined {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-northeast1-api"},"extension":{},"message":"[runtime-status] [32501] Disabled runtime features: undefined"}}
+[debug] [2022-03-15T13:51:24.560Z] [runtime-status] [32501] Resolved module firebase-admin {"declared":true,"installed":true,"version":"10.0.2","resolution":"/Users/tanaka/Desktop/20200601cloudfunctions/functions/node_modules/firebase-admin/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-northeast1-api"},"extension":{},"message":"[runtime-status] [32501] Resolved module firebase-admin {\"declared\":true,\"installed\":true,\"version\":\"10.0.2\",\"resolution\":\"/Users/tanaka/Desktop/20200601cloudfunctions/functions/node_modules/firebase-admin/lib/index.js\"}"}}
+[debug] [2022-03-15T13:51:24.561Z] [runtime-status] [32501] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.18.1","resolution":"/Users/tanaka/Desktop/20200601cloudfunctions/functions/node_modules/firebase-functions/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-northeast1-api"},"extension":{},"message":"[runtime-status] [32501] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"3.18.1\",\"resolution\":\"/Users/tanaka/Desktop/20200601cloudfunctions/functions/node_modules/firebase-functions/lib/index.js\"}"}}
+[debug] [2022-03-15T13:51:24.561Z] [runtime-status] [32501] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"}] {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-northeast1-api"},"extension":{},"message":"[runtime-status] [32501] Outgoing network have been stubbed. [{\"name\":\"http\",\"status\":\"mocked\"},{\"name\":\"http\",\"status\":\"mocked\"},{\"name\":\"https\",\"status\":\"mocked\"},{\"name\":\"https\",\"status\":\"mocked\"},{\"name\":\"net\",\"status\":\"mocked\"}]"}}
+[debug] [2022-03-15T13:51:24.562Z] [runtime-status] [32501] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.18.1","resolution":"/Users/tanaka/Desktop/20200601cloudfunctions/functions/node_modules/firebase-functions/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-northeast1-api"},"extension":{},"message":"[runtime-status] [32501] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"3.18.1\",\"resolution\":\"/Users/tanaka/Desktop/20200601cloudfunctions/functions/node_modules/firebase-functions/lib/index.js\"}"}}
+[debug] [2022-03-15T13:51:24.590Z] [runtime-status] [32501] Checked functions.config() {"config":{}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-northeast1-api"},"extension":{},"message":"[runtime-status] [32501] Checked functions.config() {\"config\":{}}"}}
+[debug] [2022-03-15T13:51:24.590Z] [runtime-status] [32501] firebase-functions has been stubbed. {"functionsResolution":{"declared":true,"installed":true,"version":"3.18.1","resolution":"/Users/tanaka/Desktop/20200601cloudfunctions/functions/node_modules/firebase-functions/lib/index.js"}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-northeast1-api"},"extension":{},"message":"[runtime-status] [32501] firebase-functions has been stubbed. {\"functionsResolution\":{\"declared\":true,\"installed\":true,\"version\":\"3.18.1\",\"resolution\":\"/Users/tanaka/Desktop/20200601cloudfunctions/functions/node_modules/firebase-functions/lib/index.js\"}}"}}
+[debug] [2022-03-15T13:51:24.591Z] [runtime-status] [32501] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.18.1","resolution":"/Users/tanaka/Desktop/20200601cloudfunctions/functions/node_modules/firebase-functions/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-northeast1-api"},"extension":{},"message":"[runtime-status] [32501] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"3.18.1\",\"resolution\":\"/Users/tanaka/Desktop/20200601cloudfunctions/functions/node_modules/firebase-functions/lib/index.js\"}"}}
+[debug] [2022-03-15T13:51:24.592Z] [runtime-status] [32501] Resolved module firebase-admin {"declared":true,"installed":true,"version":"10.0.2","resolution":"/Users/tanaka/Desktop/20200601cloudfunctions/functions/node_modules/firebase-admin/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-northeast1-api"},"extension":{},"message":"[runtime-status] [32501] Resolved module firebase-admin {\"declared\":true,\"installed\":true,\"version\":\"10.0.2\",\"resolution\":\"/Users/tanaka/Desktop/20200601cloudfunctions/functions/node_modules/firebase-admin/lib/index.js\"}"}}
+[debug] [2022-03-15T13:51:24.592Z] [runtime-status] [32501] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.18.1","resolution":"/Users/tanaka/Desktop/20200601cloudfunctions/functions/node_modules/firebase-functions/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-northeast1-api"},"extension":{},"message":"[runtime-status] [32501] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"3.18.1\",\"resolution\":\"/Users/tanaka/Desktop/20200601cloudfunctions/functions/node_modules/firebase-functions/lib/index.js\"}"}}
+[debug] [2022-03-15T13:51:24.593Z] [runtime-status] [32501] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"10.0.2","resolution":"/Users/tanaka/Desktop/20200601cloudfunctions/functions/node_modules/firebase-admin/lib/index.js"}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-northeast1-api"},"extension":{},"message":"[runtime-status] [32501] firebase-admin has been stubbed. {\"adminResolution\":{\"declared\":true,\"installed\":true,\"version\":\"10.0.2\",\"resolution\":\"/Users/tanaka/Desktop/20200601cloudfunctions/functions/node_modules/firebase-admin/lib/index.js\"}}"}}
+[debug] [2022-03-15T13:51:24.719Z] [runtime-status] [32501] Beginning invocation function api! {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-northeast1-api"},"extension":{},"message":"[runtime-status] [32501] Beginning invocation function api!"}}
+[info] i  functions: Beginning execution of "api" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-northeast1-api"},"extension":{},"message":"Beginning execution of \"api\""}}
+[debug] [2022-03-15T13:51:24.720Z] [runtime-status] [32501] Running api in signature http {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-northeast1-api"},"extension":{},"message":"[runtime-status] [32501] Running api in signature http"}}
+[debug] [2022-03-15T13:51:24.722Z] [runtime-status] [32501] Attempting to listen to socketPath: /var/folders/_j/hg5k97ln6_s_g__kzdm_9hjm0000gn/T/fire_emu_32501.sock {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-northeast1-api"},"extension":{},"message":"[runtime-status] [32501] Attempting to listen to socketPath: /var/folders/_j/hg5k97ln6_s_g__kzdm_9hjm0000gn/T/fire_emu_32501.sock"}}
+[debug] [2022-03-15T13:51:24.726Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2022-03-15T13:51:24.727Z] [functions] Got req.url=/cloudfunctions-a1e6e/asia-northeast1/api/weather, mapping to path=/weather {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/cloudfunctions-a1e6e/asia-northeast1/api/weather, mapping to path=/weather"}}
+[debug] [2022-03-15T13:51:24.732Z] [runtime-status] [32501] Ephemeral server handling GET request {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-northeast1-api"},"extension":{},"message":"[runtime-status] [32501] Ephemeral server handling GET request"}}
+[debug] [2022-03-15T13:51:24.739Z] [runtime-status] [32501] Ephemeral server survived. {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-northeast1-api"},"extension":{},"message":"[runtime-status] [32501] Ephemeral server survived."}}
+[info] i  functions: Finished "api" in ~1s {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-northeast1-api"},"extension":{},"message":"Finished \"api\" in ~1s"}}
+[debug] [2022-03-15T13:51:24.740Z] [worker-asia-northeast1-api-9edf5cb8-fcf7-40e8-922f-f1e085deaf9b]: IDLE {"metadata":{"emulator":{"name":"functions"},"message":"[worker-asia-northeast1-api-9edf5cb8-fcf7-40e8-922f-f1e085deaf9b]: IDLE"}}
+[debug] [2022-03-15T13:51:24.740Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[debug] [2022-03-15T13:52:04.231Z] File /Users/tanaka/Desktop/20200601cloudfunctions/functions/index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/tanaka/Desktop/20200601cloudfunctions/functions/index.js changed, reloading triggers"}}
+[debug] [2022-03-15T13:52:05.233Z] [worker-pool] Shutting down IDLE worker (asia-northeast1-api) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] Shutting down IDLE worker (asia-northeast1-api)"}}
+[debug] [2022-03-15T13:52:05.233Z] [worker-asia-northeast1-api-9edf5cb8-fcf7-40e8-922f-f1e085deaf9b]: FINISHING {"metadata":{"emulator":{"name":"functions"},"message":"[worker-asia-northeast1-api-9edf5cb8-fcf7-40e8-922f-f1e085deaf9b]: FINISHING"}}
+[debug] [2022-03-15T13:52:05.236Z] Validating nodejs source
+[debug] [2022-03-15T13:52:06.691Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.3",
+    "firebase-admin": "^10.0.2",
+    "firebase-functions": "^3.18.0",
+    "request": "^2.88.2",
+    "request-promise-native": "^1.0.9"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^0.2.0"
+  },
+  "private": true
+}
+[debug] [2022-03-15T13:52:06.692Z] Building nodejs source
+[debug] [2022-03-15T13:52:06.692Z] Analyzing nodejs backend spec
+[debug] [2022-03-15T13:52:06.703Z] [worker-asia-northeast1-api-9edf5cb8-fcf7-40e8-922f-f1e085deaf9b]: exited {"metadata":{"emulator":{"name":"functions"},"message":"[worker-asia-northeast1-api-9edf5cb8-fcf7-40e8-922f-f1e085deaf9b]: exited"}}
+[debug] [2022-03-15T13:52:06.703Z] [worker-asia-northeast1-api-9edf5cb8-fcf7-40e8-922f-f1e085deaf9b]: FINISHED {"metadata":{"emulator":{"name":"functions"},"message":"[worker-asia-northeast1-api-9edf5cb8-fcf7-40e8-922f-f1e085deaf9b]: FINISHED"}}
+[debug] [2022-03-15T13:52:35.696Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2022-03-15T13:52:35.696Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2022-03-15T13:52:35.696Z] Accepted request GET /cloudfunctions-a1e6e/asia-northeast1/api/hello --> asia-northeast1-api
+[debug] [2022-03-15T13:52:35.696Z] [worker-pool] Cleaned up workers for asia-northeast1-api: 1 --> 0 {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] Cleaned up workers for asia-northeast1-api: 1 --> 0"}}
+[debug] [2022-03-15T13:52:35.706Z] [worker-pool] addWorker(asia-northeast1-api) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] addWorker(asia-northeast1-api)"}}
+[debug] [2022-03-15T13:52:35.707Z] [worker-pool] Adding worker with key asia-northeast1-api, total=1 {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] Adding worker with key asia-northeast1-api, total=1"}}
+[debug] [2022-03-15T13:52:35.707Z] [worker-pool] submitWork(triggerId=asia-northeast1-api) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitWork(triggerId=asia-northeast1-api)"}}
+[debug] [2022-03-15T13:52:35.708Z] [worker-asia-northeast1-api-9bdccd13-350e-43c5-80d3-ce2d968d4287]: Assigning socketPath: /var/folders/_j/hg5k97ln6_s_g__kzdm_9hjm0000gn/T/fire_emu_33079.sock {"metadata":{"emulator":{"name":"functions"},"message":"[worker-asia-northeast1-api-9bdccd13-350e-43c5-80d3-ce2d968d4287]: Assigning socketPath: /var/folders/_j/hg5k97ln6_s_g__kzdm_9hjm0000gn/T/fire_emu_33079.sock"}}
+[debug] [2022-03-15T13:52:35.708Z] [worker-asia-northeast1-api-9bdccd13-350e-43c5-80d3-ce2d968d4287]: BUSY {"metadata":{"emulator":{"name":"functions"},"message":"[worker-asia-northeast1-api-9bdccd13-350e-43c5-80d3-ce2d968d4287]: BUSY"}}
+[debug] [2022-03-15T13:52:36.362Z] [runtime-status] [33079] Functions runtime initialized. {"cwd":"/Users/tanaka/Desktop/20200601cloudfunctions/functions","node_version":"16.14.0"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-northeast1-api"},"extension":{},"message":"[runtime-status] [33079] Functions runtime initialized. {\"cwd\":\"/Users/tanaka/Desktop/20200601cloudfunctions/functions\",\"node_version\":\"16.14.0\"}"}}
+[debug] [2022-03-15T13:52:36.366Z] [runtime-status] [33079] Disabled runtime features: undefined {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-northeast1-api"},"extension":{},"message":"[runtime-status] [33079] Disabled runtime features: undefined"}}
+[debug] [2022-03-15T13:52:36.369Z] [runtime-status] [33079] Resolved module firebase-admin {"declared":true,"installed":true,"version":"10.0.2","resolution":"/Users/tanaka/Desktop/20200601cloudfunctions/functions/node_modules/firebase-admin/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-northeast1-api"},"extension":{},"message":"[runtime-status] [33079] Resolved module firebase-admin {\"declared\":true,\"installed\":true,\"version\":\"10.0.2\",\"resolution\":\"/Users/tanaka/Desktop/20200601cloudfunctions/functions/node_modules/firebase-admin/lib/index.js\"}"}}
+[debug] [2022-03-15T13:52:36.369Z] [runtime-status] [33079] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.18.1","resolution":"/Users/tanaka/Desktop/20200601cloudfunctions/functions/node_modules/firebase-functions/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-northeast1-api"},"extension":{},"message":"[runtime-status] [33079] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"3.18.1\",\"resolution\":\"/Users/tanaka/Desktop/20200601cloudfunctions/functions/node_modules/firebase-functions/lib/index.js\"}"}}
+[debug] [2022-03-15T13:52:36.370Z] [runtime-status] [33079] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"}] {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-northeast1-api"},"extension":{},"message":"[runtime-status] [33079] Outgoing network have been stubbed. [{\"name\":\"http\",\"status\":\"mocked\"},{\"name\":\"http\",\"status\":\"mocked\"},{\"name\":\"https\",\"status\":\"mocked\"},{\"name\":\"https\",\"status\":\"mocked\"},{\"name\":\"net\",\"status\":\"mocked\"}]"}}
+[debug] [2022-03-15T13:52:36.370Z] [runtime-status] [33079] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.18.1","resolution":"/Users/tanaka/Desktop/20200601cloudfunctions/functions/node_modules/firebase-functions/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-northeast1-api"},"extension":{},"message":"[runtime-status] [33079] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"3.18.1\",\"resolution\":\"/Users/tanaka/Desktop/20200601cloudfunctions/functions/node_modules/firebase-functions/lib/index.js\"}"}}
+[debug] [2022-03-15T13:52:36.397Z] [runtime-status] [33079] Checked functions.config() {"config":{}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-northeast1-api"},"extension":{},"message":"[runtime-status] [33079] Checked functions.config() {\"config\":{}}"}}
+[debug] [2022-03-15T13:52:36.397Z] [runtime-status] [33079] firebase-functions has been stubbed. {"functionsResolution":{"declared":true,"installed":true,"version":"3.18.1","resolution":"/Users/tanaka/Desktop/20200601cloudfunctions/functions/node_modules/firebase-functions/lib/index.js"}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-northeast1-api"},"extension":{},"message":"[runtime-status] [33079] firebase-functions has been stubbed. {\"functionsResolution\":{\"declared\":true,\"installed\":true,\"version\":\"3.18.1\",\"resolution\":\"/Users/tanaka/Desktop/20200601cloudfunctions/functions/node_modules/firebase-functions/lib/index.js\"}}"}}
+[debug] [2022-03-15T13:52:36.398Z] [runtime-status] [33079] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.18.1","resolution":"/Users/tanaka/Desktop/20200601cloudfunctions/functions/node_modules/firebase-functions/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-northeast1-api"},"extension":{},"message":"[runtime-status] [33079] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"3.18.1\",\"resolution\":\"/Users/tanaka/Desktop/20200601cloudfunctions/functions/node_modules/firebase-functions/lib/index.js\"}"}}
+[debug] [2022-03-15T13:52:36.399Z] [runtime-status] [33079] Resolved module firebase-admin {"declared":true,"installed":true,"version":"10.0.2","resolution":"/Users/tanaka/Desktop/20200601cloudfunctions/functions/node_modules/firebase-admin/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-northeast1-api"},"extension":{},"message":"[runtime-status] [33079] Resolved module firebase-admin {\"declared\":true,\"installed\":true,\"version\":\"10.0.2\",\"resolution\":\"/Users/tanaka/Desktop/20200601cloudfunctions/functions/node_modules/firebase-admin/lib/index.js\"}"}}
+[debug] [2022-03-15T13:52:36.399Z] [runtime-status] [33079] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.18.1","resolution":"/Users/tanaka/Desktop/20200601cloudfunctions/functions/node_modules/firebase-functions/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-northeast1-api"},"extension":{},"message":"[runtime-status] [33079] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"3.18.1\",\"resolution\":\"/Users/tanaka/Desktop/20200601cloudfunctions/functions/node_modules/firebase-functions/lib/index.js\"}"}}
+[debug] [2022-03-15T13:52:36.400Z] [runtime-status] [33079] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"10.0.2","resolution":"/Users/tanaka/Desktop/20200601cloudfunctions/functions/node_modules/firebase-admin/lib/index.js"}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-northeast1-api"},"extension":{},"message":"[runtime-status] [33079] firebase-admin has been stubbed. {\"adminResolution\":{\"declared\":true,\"installed\":true,\"version\":\"10.0.2\",\"resolution\":\"/Users/tanaka/Desktop/20200601cloudfunctions/functions/node_modules/firebase-admin/lib/index.js\"}}"}}
+[debug] [2022-03-15T13:52:36.529Z] [runtime-status] [33079] Beginning invocation function api! {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-northeast1-api"},"extension":{},"message":"[runtime-status] [33079] Beginning invocation function api!"}}
+[info] i  functions: Beginning execution of "api" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-northeast1-api"},"extension":{},"message":"Beginning execution of \"api\""}}
+[debug] [2022-03-15T13:52:36.530Z] [runtime-status] [33079] Running api in signature http {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-northeast1-api"},"extension":{},"message":"[runtime-status] [33079] Running api in signature http"}}
+[debug] [2022-03-15T13:52:36.532Z] [runtime-status] [33079] Attempting to listen to socketPath: /var/folders/_j/hg5k97ln6_s_g__kzdm_9hjm0000gn/T/fire_emu_33079.sock {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-northeast1-api"},"extension":{},"message":"[runtime-status] [33079] Attempting to listen to socketPath: /var/folders/_j/hg5k97ln6_s_g__kzdm_9hjm0000gn/T/fire_emu_33079.sock"}}
+[debug] [2022-03-15T13:52:36.535Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2022-03-15T13:52:36.537Z] [functions] Got req.url=/cloudfunctions-a1e6e/asia-northeast1/api/hello, mapping to path=/hello {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/cloudfunctions-a1e6e/asia-northeast1/api/hello, mapping to path=/hello"}}
+[debug] [2022-03-15T13:52:36.542Z] [runtime-status] [33079] Ephemeral server handling GET request {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-northeast1-api"},"extension":{},"message":"[runtime-status] [33079] Ephemeral server handling GET request"}}
+[debug] [2022-03-15T13:52:36.549Z] [runtime-status] [33079] Ephemeral server survived. {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-northeast1-api"},"extension":{},"message":"[runtime-status] [33079] Ephemeral server survived."}}
+[info] i  functions: Finished "api" in ~1s {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-northeast1-api"},"extension":{},"message":"Finished \"api\" in ~1s"}}
+[debug] [2022-03-15T13:52:36.550Z] [worker-asia-northeast1-api-9bdccd13-350e-43c5-80d3-ce2d968d4287]: IDLE {"metadata":{"emulator":{"name":"functions"},"message":"[worker-asia-northeast1-api-9bdccd13-350e-43c5-80d3-ce2d968d4287]: IDLE"}}
+[debug] [2022-03-15T13:52:36.550Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[debug] [2022-03-15T13:53:13.202Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2022-03-15T13:53:13.202Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2022-03-15T13:53:13.202Z] Accepted request GET /cloudfunctions-a1e6e/asia-northeast1/api/hello --> asia-northeast1-api
+[debug] [2022-03-15T13:53:13.202Z] [worker-pool] submitWork(triggerId=asia-northeast1-api) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitWork(triggerId=asia-northeast1-api)"}}
+[debug] [2022-03-15T13:53:13.203Z] [worker-asia-northeast1-api-9bdccd13-350e-43c5-80d3-ce2d968d4287]: Assigning socketPath: /var/folders/_j/hg5k97ln6_s_g__kzdm_9hjm0000gn/T/fire_emu_33079.sock {"metadata":{"emulator":{"name":"functions"},"message":"[worker-asia-northeast1-api-9bdccd13-350e-43c5-80d3-ce2d968d4287]: Assigning socketPath: /var/folders/_j/hg5k97ln6_s_g__kzdm_9hjm0000gn/T/fire_emu_33079.sock"}}
+[debug] [2022-03-15T13:53:13.203Z] [worker-asia-northeast1-api-9bdccd13-350e-43c5-80d3-ce2d968d4287]: BUSY {"metadata":{"emulator":{"name":"functions"},"message":"[worker-asia-northeast1-api-9bdccd13-350e-43c5-80d3-ce2d968d4287]: BUSY"}}
+[debug] [2022-03-15T13:53:13.204Z] [runtime-status] [33079] Beginning invocation function api! {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-northeast1-api"},"extension":{},"message":"[runtime-status] [33079] Beginning invocation function api!"}}
+[info] i  functions: Beginning execution of "api" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-northeast1-api"},"extension":{},"message":"Beginning execution of \"api\""}}
+[debug] [2022-03-15T13:53:13.204Z] [runtime-status] [33079] Running api in signature http {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-northeast1-api"},"extension":{},"message":"[runtime-status] [33079] Running api in signature http"}}
+[debug] [2022-03-15T13:53:13.206Z] [runtime-status] [33079] Attempting to listen to socketPath: /var/folders/_j/hg5k97ln6_s_g__kzdm_9hjm0000gn/T/fire_emu_33079.sock {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-northeast1-api"},"extension":{},"message":"[runtime-status] [33079] Attempting to listen to socketPath: /var/folders/_j/hg5k97ln6_s_g__kzdm_9hjm0000gn/T/fire_emu_33079.sock"}}
+[debug] [2022-03-15T13:53:13.207Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2022-03-15T13:53:13.207Z] [functions] Got req.url=/cloudfunctions-a1e6e/asia-northeast1/api/hello, mapping to path=/hello {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/cloudfunctions-a1e6e/asia-northeast1/api/hello, mapping to path=/hello"}}
+[debug] [2022-03-15T13:53:13.209Z] [runtime-status] [33079] Ephemeral server handling GET request {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-northeast1-api"},"extension":{},"message":"[runtime-status] [33079] Ephemeral server handling GET request"}}
+[debug] [2022-03-15T13:53:13.212Z] [runtime-status] [33079] Ephemeral server survived. {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-northeast1-api"},"extension":{},"message":"[runtime-status] [33079] Ephemeral server survived."}}
+[info] i  functions: Finished "api" in ~1s {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-northeast1-api"},"extension":{},"message":"Finished \"api\" in ~1s"}}
+[debug] [2022-03-15T13:53:13.212Z] [worker-asia-northeast1-api-9bdccd13-350e-43c5-80d3-ce2d968d4287]: IDLE {"metadata":{"emulator":{"name":"functions"},"message":"[worker-asia-northeast1-api-9bdccd13-350e-43c5-80d3-ce2d968d4287]: IDLE"}}
+[debug] [2022-03-15T13:53:13.213Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[debug] [2022-03-15T13:53:22.570Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2022-03-15T13:53:22.570Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2022-03-15T13:53:22.570Z] Accepted request GET /cloudfunctions-a1e6e/asia-northeast1/api --> asia-northeast1-api
+[debug] [2022-03-15T13:53:22.570Z] [worker-pool] submitWork(triggerId=asia-northeast1-api) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitWork(triggerId=asia-northeast1-api)"}}
+[debug] [2022-03-15T13:53:22.570Z] [worker-asia-northeast1-api-9bdccd13-350e-43c5-80d3-ce2d968d4287]: Assigning socketPath: /var/folders/_j/hg5k97ln6_s_g__kzdm_9hjm0000gn/T/fire_emu_33079.sock {"metadata":{"emulator":{"name":"functions"},"message":"[worker-asia-northeast1-api-9bdccd13-350e-43c5-80d3-ce2d968d4287]: Assigning socketPath: /var/folders/_j/hg5k97ln6_s_g__kzdm_9hjm0000gn/T/fire_emu_33079.sock"}}
+[debug] [2022-03-15T13:53:22.570Z] [worker-asia-northeast1-api-9bdccd13-350e-43c5-80d3-ce2d968d4287]: BUSY {"metadata":{"emulator":{"name":"functions"},"message":"[worker-asia-northeast1-api-9bdccd13-350e-43c5-80d3-ce2d968d4287]: BUSY"}}
+[debug] [2022-03-15T13:53:22.571Z] [runtime-status] [33079] Beginning invocation function api! {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-northeast1-api"},"extension":{},"message":"[runtime-status] [33079] Beginning invocation function api!"}}
+[info] i  functions: Beginning execution of "api" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-northeast1-api"},"extension":{},"message":"Beginning execution of \"api\""}}
+[debug] [2022-03-15T13:53:22.572Z] [runtime-status] [33079] Running api in signature http {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-northeast1-api"},"extension":{},"message":"[runtime-status] [33079] Running api in signature http"}}
+[debug] [2022-03-15T13:53:22.572Z] [runtime-status] [33079] Attempting to listen to socketPath: /var/folders/_j/hg5k97ln6_s_g__kzdm_9hjm0000gn/T/fire_emu_33079.sock {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-northeast1-api"},"extension":{},"message":"[runtime-status] [33079] Attempting to listen to socketPath: /var/folders/_j/hg5k97ln6_s_g__kzdm_9hjm0000gn/T/fire_emu_33079.sock"}}
+[debug] [2022-03-15T13:53:22.573Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2022-03-15T13:53:22.573Z] [functions] Got req.url=/cloudfunctions-a1e6e/asia-northeast1/api, mapping to path=/ {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/cloudfunctions-a1e6e/asia-northeast1/api, mapping to path=/"}}
+[debug] [2022-03-15T13:53:22.576Z] [runtime-status] [33079] Ephemeral server handling GET request {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-northeast1-api"},"extension":{},"message":"[runtime-status] [33079] Ephemeral server handling GET request"}}
+[debug] [2022-03-15T13:53:22.580Z] [runtime-status] [33079] Ephemeral server survived. {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-northeast1-api"},"extension":{},"message":"[runtime-status] [33079] Ephemeral server survived."}}
+[info] i  functions: Finished "api" in ~1s {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-northeast1-api"},"extension":{},"message":"Finished \"api\" in ~1s"}}
+[debug] [2022-03-15T13:53:22.581Z] [worker-asia-northeast1-api-9bdccd13-350e-43c5-80d3-ce2d968d4287]: IDLE {"metadata":{"emulator":{"name":"functions"},"message":"[worker-asia-northeast1-api-9bdccd13-350e-43c5-80d3-ce2d968d4287]: IDLE"}}
+[debug] [2022-03-15T13:53:22.581Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[debug] [2022-03-15T13:53:33.931Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2022-03-15T13:53:33.931Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2022-03-15T13:53:33.932Z] Accepted request GET /cloudfunctions-a1e6e/asia-northeast1/api/weather --> asia-northeast1-api
+[debug] [2022-03-15T13:53:33.932Z] [worker-pool] submitWork(triggerId=asia-northeast1-api) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitWork(triggerId=asia-northeast1-api)"}}
+[debug] [2022-03-15T13:53:33.932Z] [worker-asia-northeast1-api-9bdccd13-350e-43c5-80d3-ce2d968d4287]: Assigning socketPath: /var/folders/_j/hg5k97ln6_s_g__kzdm_9hjm0000gn/T/fire_emu_33079.sock {"metadata":{"emulator":{"name":"functions"},"message":"[worker-asia-northeast1-api-9bdccd13-350e-43c5-80d3-ce2d968d4287]: Assigning socketPath: /var/folders/_j/hg5k97ln6_s_g__kzdm_9hjm0000gn/T/fire_emu_33079.sock"}}
+[debug] [2022-03-15T13:53:33.932Z] [worker-asia-northeast1-api-9bdccd13-350e-43c5-80d3-ce2d968d4287]: BUSY {"metadata":{"emulator":{"name":"functions"},"message":"[worker-asia-northeast1-api-9bdccd13-350e-43c5-80d3-ce2d968d4287]: BUSY"}}
+[debug] [2022-03-15T13:53:33.933Z] [runtime-status] [33079] Beginning invocation function api! {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-northeast1-api"},"extension":{},"message":"[runtime-status] [33079] Beginning invocation function api!"}}
+[info] i  functions: Beginning execution of "api" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-northeast1-api"},"extension":{},"message":"Beginning execution of \"api\""}}
+[debug] [2022-03-15T13:53:33.933Z] [runtime-status] [33079] Running api in signature http {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-northeast1-api"},"extension":{},"message":"[runtime-status] [33079] Running api in signature http"}}
+[debug] [2022-03-15T13:53:33.933Z] [runtime-status] [33079] Attempting to listen to socketPath: /var/folders/_j/hg5k97ln6_s_g__kzdm_9hjm0000gn/T/fire_emu_33079.sock {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-northeast1-api"},"extension":{},"message":"[runtime-status] [33079] Attempting to listen to socketPath: /var/folders/_j/hg5k97ln6_s_g__kzdm_9hjm0000gn/T/fire_emu_33079.sock"}}
+[debug] [2022-03-15T13:53:33.934Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2022-03-15T13:53:33.935Z] [functions] Got req.url=/cloudfunctions-a1e6e/asia-northeast1/api/weather, mapping to path=/weather {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/cloudfunctions-a1e6e/asia-northeast1/api/weather, mapping to path=/weather"}}
+[debug] [2022-03-15T13:53:33.937Z] [runtime-status] [33079] Ephemeral server handling GET request {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-northeast1-api"},"extension":{},"message":"[runtime-status] [33079] Ephemeral server handling GET request"}}
+[debug] [2022-03-15T13:53:33.939Z] [runtime-status] [33079] Ephemeral server survived. {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-northeast1-api"},"extension":{},"message":"[runtime-status] [33079] Ephemeral server survived."}}
+[info] i  functions: Finished "api" in ~1s {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-northeast1-api"},"extension":{},"message":"Finished \"api\" in ~1s"}}
+[debug] [2022-03-15T13:53:33.940Z] [worker-asia-northeast1-api-9bdccd13-350e-43c5-80d3-ce2d968d4287]: IDLE {"metadata":{"emulator":{"name":"functions"},"message":"[worker-asia-northeast1-api-9bdccd13-350e-43c5-80d3-ce2d968d4287]: IDLE"}}
+[debug] [2022-03-15T13:53:33.940Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[debug] [2022-03-15T13:54:14.194Z] File /Users/tanaka/Desktop/20200601cloudfunctions/functions/index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/tanaka/Desktop/20200601cloudfunctions/functions/index.js changed, reloading triggers"}}
+[debug] [2022-03-15T13:54:15.196Z] [worker-pool] Shutting down IDLE worker (asia-northeast1-api) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] Shutting down IDLE worker (asia-northeast1-api)"}}
+[debug] [2022-03-15T13:54:15.196Z] [worker-asia-northeast1-api-9bdccd13-350e-43c5-80d3-ce2d968d4287]: FINISHING {"metadata":{"emulator":{"name":"functions"},"message":"[worker-asia-northeast1-api-9bdccd13-350e-43c5-80d3-ce2d968d4287]: FINISHING"}}
+[debug] [2022-03-15T13:54:15.196Z] Validating nodejs source
+[debug] [2022-03-15T13:54:16.666Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.3",
+    "firebase-admin": "^10.0.2",
+    "firebase-functions": "^3.18.0",
+    "request": "^2.88.2",
+    "request-promise-native": "^1.0.9"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^0.2.0"
+  },
+  "private": true
+}
+[debug] [2022-03-15T13:54:16.667Z] Building nodejs source
+[debug] [2022-03-15T13:54:16.667Z] Analyzing nodejs backend spec
+[debug] [2022-03-15T13:54:16.677Z] [worker-asia-northeast1-api-9bdccd13-350e-43c5-80d3-ce2d968d4287]: exited {"metadata":{"emulator":{"name":"functions"},"message":"[worker-asia-northeast1-api-9bdccd13-350e-43c5-80d3-ce2d968d4287]: exited"}}
+[debug] [2022-03-15T13:54:16.678Z] [worker-asia-northeast1-api-9bdccd13-350e-43c5-80d3-ce2d968d4287]: FINISHED {"metadata":{"emulator":{"name":"functions"},"message":"[worker-asia-northeast1-api-9bdccd13-350e-43c5-80d3-ce2d968d4287]: FINISHED"}}
+[debug] [2022-03-15T13:54:17.494Z] File /Users/tanaka/Desktop/20200601cloudfunctions/functions/index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/tanaka/Desktop/20200601cloudfunctions/functions/index.js changed, reloading triggers"}}
+[debug] [2022-03-15T13:54:18.497Z] Validating nodejs source
+[debug] [2022-03-15T13:54:19.875Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.3",
+    "firebase-admin": "^10.0.2",
+    "firebase-functions": "^3.18.0",
+    "request": "^2.88.2",
+    "request-promise-native": "^1.0.9"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^0.2.0"
+  },
+  "private": true
+}
+[debug] [2022-03-15T13:54:19.877Z] Building nodejs source
+[debug] [2022-03-15T13:54:19.877Z] Analyzing nodejs backend spec
+[debug] [2022-03-15T13:54:34.582Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2022-03-15T13:54:34.583Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2022-03-15T13:54:34.583Z] Accepted request GET /cloudfunctions-a1e6e/asia-northeast1/api/weather --> asia-northeast1-api
+[debug] [2022-03-15T13:54:34.583Z] [worker-pool] Cleaned up workers for asia-northeast1-api: 1 --> 0 {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] Cleaned up workers for asia-northeast1-api: 1 --> 0"}}
+[debug] [2022-03-15T13:54:34.592Z] [worker-pool] addWorker(asia-northeast1-api) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] addWorker(asia-northeast1-api)"}}
+[debug] [2022-03-15T13:54:34.593Z] [worker-pool] Adding worker with key asia-northeast1-api, total=1 {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] Adding worker with key asia-northeast1-api, total=1"}}
+[debug] [2022-03-15T13:54:34.593Z] [worker-pool] submitWork(triggerId=asia-northeast1-api) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitWork(triggerId=asia-northeast1-api)"}}
+[debug] [2022-03-15T13:54:34.593Z] [worker-asia-northeast1-api-d1e32b24-93e7-4b20-8838-716026e2740f]: Assigning socketPath: /var/folders/_j/hg5k97ln6_s_g__kzdm_9hjm0000gn/T/fire_emu_34069.sock {"metadata":{"emulator":{"name":"functions"},"message":"[worker-asia-northeast1-api-d1e32b24-93e7-4b20-8838-716026e2740f]: Assigning socketPath: /var/folders/_j/hg5k97ln6_s_g__kzdm_9hjm0000gn/T/fire_emu_34069.sock"}}
+[debug] [2022-03-15T13:54:34.593Z] [worker-asia-northeast1-api-d1e32b24-93e7-4b20-8838-716026e2740f]: BUSY {"metadata":{"emulator":{"name":"functions"},"message":"[worker-asia-northeast1-api-d1e32b24-93e7-4b20-8838-716026e2740f]: BUSY"}}
+[debug] [2022-03-15T13:54:35.242Z] [runtime-status] [34069] Functions runtime initialized. {"cwd":"/Users/tanaka/Desktop/20200601cloudfunctions/functions","node_version":"16.14.0"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-northeast1-api"},"extension":{},"message":"[runtime-status] [34069] Functions runtime initialized. {\"cwd\":\"/Users/tanaka/Desktop/20200601cloudfunctions/functions\",\"node_version\":\"16.14.0\"}"}}
+[debug] [2022-03-15T13:54:35.243Z] [runtime-status] [34069] Disabled runtime features: undefined {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-northeast1-api"},"extension":{},"message":"[runtime-status] [34069] Disabled runtime features: undefined"}}
+[debug] [2022-03-15T13:54:35.245Z] [runtime-status] [34069] Resolved module firebase-admin {"declared":true,"installed":true,"version":"10.0.2","resolution":"/Users/tanaka/Desktop/20200601cloudfunctions/functions/node_modules/firebase-admin/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-northeast1-api"},"extension":{},"message":"[runtime-status] [34069] Resolved module firebase-admin {\"declared\":true,\"installed\":true,\"version\":\"10.0.2\",\"resolution\":\"/Users/tanaka/Desktop/20200601cloudfunctions/functions/node_modules/firebase-admin/lib/index.js\"}"}}
+[debug] [2022-03-15T13:54:35.246Z] [runtime-status] [34069] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.18.1","resolution":"/Users/tanaka/Desktop/20200601cloudfunctions/functions/node_modules/firebase-functions/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-northeast1-api"},"extension":{},"message":"[runtime-status] [34069] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"3.18.1\",\"resolution\":\"/Users/tanaka/Desktop/20200601cloudfunctions/functions/node_modules/firebase-functions/lib/index.js\"}"}}
+[debug] [2022-03-15T13:54:35.251Z] [runtime-status] [34069] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"}] {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-northeast1-api"},"extension":{},"message":"[runtime-status] [34069] Outgoing network have been stubbed. [{\"name\":\"http\",\"status\":\"mocked\"},{\"name\":\"http\",\"status\":\"mocked\"},{\"name\":\"https\",\"status\":\"mocked\"},{\"name\":\"https\",\"status\":\"mocked\"},{\"name\":\"net\",\"status\":\"mocked\"}]"}}
+[debug] [2022-03-15T13:54:35.252Z] [runtime-status] [34069] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.18.1","resolution":"/Users/tanaka/Desktop/20200601cloudfunctions/functions/node_modules/firebase-functions/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-northeast1-api"},"extension":{},"message":"[runtime-status] [34069] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"3.18.1\",\"resolution\":\"/Users/tanaka/Desktop/20200601cloudfunctions/functions/node_modules/firebase-functions/lib/index.js\"}"}}
+[debug] [2022-03-15T13:54:35.279Z] [runtime-status] [34069] Checked functions.config() {"config":{}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-northeast1-api"},"extension":{},"message":"[runtime-status] [34069] Checked functions.config() {\"config\":{}}"}}
+[debug] [2022-03-15T13:54:35.280Z] [runtime-status] [34069] firebase-functions has been stubbed. {"functionsResolution":{"declared":true,"installed":true,"version":"3.18.1","resolution":"/Users/tanaka/Desktop/20200601cloudfunctions/functions/node_modules/firebase-functions/lib/index.js"}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-northeast1-api"},"extension":{},"message":"[runtime-status] [34069] firebase-functions has been stubbed. {\"functionsResolution\":{\"declared\":true,\"installed\":true,\"version\":\"3.18.1\",\"resolution\":\"/Users/tanaka/Desktop/20200601cloudfunctions/functions/node_modules/firebase-functions/lib/index.js\"}}"}}
+[debug] [2022-03-15T13:54:35.280Z] [runtime-status] [34069] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.18.1","resolution":"/Users/tanaka/Desktop/20200601cloudfunctions/functions/node_modules/firebase-functions/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-northeast1-api"},"extension":{},"message":"[runtime-status] [34069] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"3.18.1\",\"resolution\":\"/Users/tanaka/Desktop/20200601cloudfunctions/functions/node_modules/firebase-functions/lib/index.js\"}"}}
+[debug] [2022-03-15T13:54:35.281Z] [runtime-status] [34069] Resolved module firebase-admin {"declared":true,"installed":true,"version":"10.0.2","resolution":"/Users/tanaka/Desktop/20200601cloudfunctions/functions/node_modules/firebase-admin/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-northeast1-api"},"extension":{},"message":"[runtime-status] [34069] Resolved module firebase-admin {\"declared\":true,\"installed\":true,\"version\":\"10.0.2\",\"resolution\":\"/Users/tanaka/Desktop/20200601cloudfunctions/functions/node_modules/firebase-admin/lib/index.js\"}"}}
+[debug] [2022-03-15T13:54:35.282Z] [runtime-status] [34069] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.18.1","resolution":"/Users/tanaka/Desktop/20200601cloudfunctions/functions/node_modules/firebase-functions/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-northeast1-api"},"extension":{},"message":"[runtime-status] [34069] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"3.18.1\",\"resolution\":\"/Users/tanaka/Desktop/20200601cloudfunctions/functions/node_modules/firebase-functions/lib/index.js\"}"}}
+[debug] [2022-03-15T13:54:35.282Z] [runtime-status] [34069] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"10.0.2","resolution":"/Users/tanaka/Desktop/20200601cloudfunctions/functions/node_modules/firebase-admin/lib/index.js"}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-northeast1-api"},"extension":{},"message":"[runtime-status] [34069] firebase-admin has been stubbed. {\"adminResolution\":{\"declared\":true,\"installed\":true,\"version\":\"10.0.2\",\"resolution\":\"/Users/tanaka/Desktop/20200601cloudfunctions/functions/node_modules/firebase-admin/lib/index.js\"}}"}}
+[debug] [2022-03-15T13:54:35.410Z] [runtime-status] [34069] Beginning invocation function api! {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-northeast1-api"},"extension":{},"message":"[runtime-status] [34069] Beginning invocation function api!"}}
+[info] i  functions: Beginning execution of "api" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-northeast1-api"},"extension":{},"message":"Beginning execution of \"api\""}}
+[debug] [2022-03-15T13:54:35.411Z] [runtime-status] [34069] Running api in signature http {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-northeast1-api"},"extension":{},"message":"[runtime-status] [34069] Running api in signature http"}}
+[debug] [2022-03-15T13:54:35.414Z] [runtime-status] [34069] Attempting to listen to socketPath: /var/folders/_j/hg5k97ln6_s_g__kzdm_9hjm0000gn/T/fire_emu_34069.sock {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-northeast1-api"},"extension":{},"message":"[runtime-status] [34069] Attempting to listen to socketPath: /var/folders/_j/hg5k97ln6_s_g__kzdm_9hjm0000gn/T/fire_emu_34069.sock"}}
+[debug] [2022-03-15T13:54:35.417Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2022-03-15T13:54:35.417Z] [functions] Got req.url=/cloudfunctions-a1e6e/asia-northeast1/api/weather, mapping to path=/weather {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/cloudfunctions-a1e6e/asia-northeast1/api/weather, mapping to path=/weather"}}
+[debug] [2022-03-15T13:54:35.424Z] [runtime-status] [34069] Ephemeral server handling GET request {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-northeast1-api"},"extension":{},"message":"[runtime-status] [34069] Ephemeral server handling GET request"}}
+[debug] [2022-03-15T13:54:35.428Z] [runtime-status] [34069] Ephemeral server survived. {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-northeast1-api"},"extension":{},"message":"[runtime-status] [34069] Ephemeral server survived."}}
+[warn] ⚠  External network resource requested!
+   - URL: "https://api.openweathermap.org/data/2.5/weather?q=Tokyo,JP&appid=1a862e438c8ffc94c83732838961e74e&lang=ja&units=metricundefined"
+ - Be careful, this may be a production service. {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-northeast1-api"},"extension":{},"message":"External network resource requested!\n   - URL: \"https://api.openweathermap.org/data/2.5/weather?q=Tokyo,JP&appid=1a862e438c8ffc94c83732838961e74e&lang=ja&units=metricundefined\"\n - Be careful, this may be a production service."}}
+[info] i  functions: Finished "api" in ~1s {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-northeast1-api"},"extension":{},"message":"Finished \"api\" in ~1s"}}
+[debug] [2022-03-15T13:54:36.106Z] [worker-asia-northeast1-api-d1e32b24-93e7-4b20-8838-716026e2740f]: IDLE {"metadata":{"emulator":{"name":"functions"},"message":"[worker-asia-northeast1-api-d1e32b24-93e7-4b20-8838-716026e2740f]: IDLE"}}
+[debug] [2022-03-15T13:54:36.107Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[debug] [2022-03-15T13:55:44.322Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2022-03-15T13:55:44.322Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2022-03-15T13:55:44.322Z] Accepted request GET /cloudfunctions-a1e6e/asia-northeast1/api/weather --> asia-northeast1-api
+[debug] [2022-03-15T13:55:44.322Z] [worker-pool] submitWork(triggerId=asia-northeast1-api) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitWork(triggerId=asia-northeast1-api)"}}
+[debug] [2022-03-15T13:55:44.322Z] [worker-asia-northeast1-api-d1e32b24-93e7-4b20-8838-716026e2740f]: Assigning socketPath: /var/folders/_j/hg5k97ln6_s_g__kzdm_9hjm0000gn/T/fire_emu_34069.sock {"metadata":{"emulator":{"name":"functions"},"message":"[worker-asia-northeast1-api-d1e32b24-93e7-4b20-8838-716026e2740f]: Assigning socketPath: /var/folders/_j/hg5k97ln6_s_g__kzdm_9hjm0000gn/T/fire_emu_34069.sock"}}
+[debug] [2022-03-15T13:55:44.323Z] [worker-asia-northeast1-api-d1e32b24-93e7-4b20-8838-716026e2740f]: BUSY {"metadata":{"emulator":{"name":"functions"},"message":"[worker-asia-northeast1-api-d1e32b24-93e7-4b20-8838-716026e2740f]: BUSY"}}
+[debug] [2022-03-15T13:55:44.323Z] [runtime-status] [34069] Beginning invocation function api! {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-northeast1-api"},"extension":{},"message":"[runtime-status] [34069] Beginning invocation function api!"}}
+[info] i  functions: Beginning execution of "api" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-northeast1-api"},"extension":{},"message":"Beginning execution of \"api\""}}
+[debug] [2022-03-15T13:55:44.324Z] [runtime-status] [34069] Running api in signature http {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-northeast1-api"},"extension":{},"message":"[runtime-status] [34069] Running api in signature http"}}
+[debug] [2022-03-15T13:55:44.325Z] [runtime-status] [34069] Attempting to listen to socketPath: /var/folders/_j/hg5k97ln6_s_g__kzdm_9hjm0000gn/T/fire_emu_34069.sock {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-northeast1-api"},"extension":{},"message":"[runtime-status] [34069] Attempting to listen to socketPath: /var/folders/_j/hg5k97ln6_s_g__kzdm_9hjm0000gn/T/fire_emu_34069.sock"}}
+[debug] [2022-03-15T13:55:44.326Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2022-03-15T13:55:44.326Z] [functions] Got req.url=/cloudfunctions-a1e6e/asia-northeast1/api/weather, mapping to path=/weather {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/cloudfunctions-a1e6e/asia-northeast1/api/weather, mapping to path=/weather"}}
+[debug] [2022-03-15T13:55:44.328Z] [runtime-status] [34069] Ephemeral server handling GET request {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-northeast1-api"},"extension":{},"message":"[runtime-status] [34069] Ephemeral server handling GET request"}}
+[debug] [2022-03-15T13:55:44.330Z] [runtime-status] [34069] Ephemeral server survived. {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-northeast1-api"},"extension":{},"message":"[runtime-status] [34069] Ephemeral server survived."}}
+[info] i  functions: Finished "api" in ~1s {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-northeast1-api"},"extension":{},"message":"Finished \"api\" in ~1s"}}
+[debug] [2022-03-15T13:55:45.916Z] [worker-asia-northeast1-api-d1e32b24-93e7-4b20-8838-716026e2740f]: IDLE {"metadata":{"emulator":{"name":"functions"},"message":"[worker-asia-northeast1-api-d1e32b24-93e7-4b20-8838-716026e2740f]: IDLE"}}
+[debug] [2022-03-15T13:55:45.917Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[debug] [2022-03-15T13:56:45.058Z] File /Users/tanaka/Desktop/20200601cloudfunctions/functions/index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/tanaka/Desktop/20200601cloudfunctions/functions/index.js changed, reloading triggers"}}
+[debug] [2022-03-15T13:56:46.059Z] [worker-pool] Shutting down IDLE worker (asia-northeast1-api) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] Shutting down IDLE worker (asia-northeast1-api)"}}
+[debug] [2022-03-15T13:56:46.059Z] [worker-asia-northeast1-api-d1e32b24-93e7-4b20-8838-716026e2740f]: FINISHING {"metadata":{"emulator":{"name":"functions"},"message":"[worker-asia-northeast1-api-d1e32b24-93e7-4b20-8838-716026e2740f]: FINISHING"}}
+[debug] [2022-03-15T13:56:46.061Z] Validating nodejs source
+[debug] [2022-03-15T13:56:47.470Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.3",
+    "firebase-admin": "^10.0.2",
+    "firebase-functions": "^3.18.0",
+    "request": "^2.88.2",
+    "request-promise-native": "^1.0.9"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^0.2.0"
+  },
+  "private": true
+}
+[debug] [2022-03-15T13:56:47.471Z] Building nodejs source
+[debug] [2022-03-15T13:56:47.471Z] Analyzing nodejs backend spec
+[debug] [2022-03-15T13:56:47.480Z] [worker-asia-northeast1-api-d1e32b24-93e7-4b20-8838-716026e2740f]: exited {"metadata":{"emulator":{"name":"functions"},"message":"[worker-asia-northeast1-api-d1e32b24-93e7-4b20-8838-716026e2740f]: exited"}}
+[debug] [2022-03-15T13:56:47.480Z] [worker-asia-northeast1-api-d1e32b24-93e7-4b20-8838-716026e2740f]: FINISHED {"metadata":{"emulator":{"name":"functions"},"message":"[worker-asia-northeast1-api-d1e32b24-93e7-4b20-8838-716026e2740f]: FINISHED"}}
+[debug] [2022-03-15T13:57:10.104Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2022-03-15T13:57:10.105Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2022-03-15T13:57:10.105Z] Accepted request GET /cloudfunctions-a1e6e/asia-northeast1/api/weather --> asia-northeast1-api
+[debug] [2022-03-15T13:57:10.105Z] [worker-pool] Cleaned up workers for asia-northeast1-api: 1 --> 0 {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] Cleaned up workers for asia-northeast1-api: 1 --> 0"}}
+[debug] [2022-03-15T13:57:10.114Z] [worker-pool] addWorker(asia-northeast1-api) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] addWorker(asia-northeast1-api)"}}
+[debug] [2022-03-15T13:57:10.114Z] [worker-pool] Adding worker with key asia-northeast1-api, total=1 {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] Adding worker with key asia-northeast1-api, total=1"}}
+[debug] [2022-03-15T13:57:10.115Z] [worker-pool] submitWork(triggerId=asia-northeast1-api) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitWork(triggerId=asia-northeast1-api)"}}
+[debug] [2022-03-15T13:57:10.115Z] [worker-asia-northeast1-api-ee39693a-2b24-4584-af8c-512bb7046211]: Assigning socketPath: /var/folders/_j/hg5k97ln6_s_g__kzdm_9hjm0000gn/T/fire_emu_35292.sock {"metadata":{"emulator":{"name":"functions"},"message":"[worker-asia-northeast1-api-ee39693a-2b24-4584-af8c-512bb7046211]: Assigning socketPath: /var/folders/_j/hg5k97ln6_s_g__kzdm_9hjm0000gn/T/fire_emu_35292.sock"}}
+[debug] [2022-03-15T13:57:10.115Z] [worker-asia-northeast1-api-ee39693a-2b24-4584-af8c-512bb7046211]: BUSY {"metadata":{"emulator":{"name":"functions"},"message":"[worker-asia-northeast1-api-ee39693a-2b24-4584-af8c-512bb7046211]: BUSY"}}
+[debug] [2022-03-15T13:57:10.767Z] [runtime-status] [35292] Functions runtime initialized. {"cwd":"/Users/tanaka/Desktop/20200601cloudfunctions/functions","node_version":"16.14.0"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-northeast1-api"},"extension":{},"message":"[runtime-status] [35292] Functions runtime initialized. {\"cwd\":\"/Users/tanaka/Desktop/20200601cloudfunctions/functions\",\"node_version\":\"16.14.0\"}"}}
+[debug] [2022-03-15T13:57:10.769Z] [runtime-status] [35292] Disabled runtime features: undefined {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-northeast1-api"},"extension":{},"message":"[runtime-status] [35292] Disabled runtime features: undefined"}}
+[debug] [2022-03-15T13:57:10.771Z] [runtime-status] [35292] Resolved module firebase-admin {"declared":true,"installed":true,"version":"10.0.2","resolution":"/Users/tanaka/Desktop/20200601cloudfunctions/functions/node_modules/firebase-admin/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-northeast1-api"},"extension":{},"message":"[runtime-status] [35292] Resolved module firebase-admin {\"declared\":true,\"installed\":true,\"version\":\"10.0.2\",\"resolution\":\"/Users/tanaka/Desktop/20200601cloudfunctions/functions/node_modules/firebase-admin/lib/index.js\"}"}}
+[debug] [2022-03-15T13:57:10.772Z] [runtime-status] [35292] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.18.1","resolution":"/Users/tanaka/Desktop/20200601cloudfunctions/functions/node_modules/firebase-functions/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-northeast1-api"},"extension":{},"message":"[runtime-status] [35292] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"3.18.1\",\"resolution\":\"/Users/tanaka/Desktop/20200601cloudfunctions/functions/node_modules/firebase-functions/lib/index.js\"}"}}
+[debug] [2022-03-15T13:57:10.772Z] [runtime-status] [35292] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"}] {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-northeast1-api"},"extension":{},"message":"[runtime-status] [35292] Outgoing network have been stubbed. [{\"name\":\"http\",\"status\":\"mocked\"},{\"name\":\"http\",\"status\":\"mocked\"},{\"name\":\"https\",\"status\":\"mocked\"},{\"name\":\"https\",\"status\":\"mocked\"},{\"name\":\"net\",\"status\":\"mocked\"}]"}}
+[debug] [2022-03-15T13:57:10.773Z] [runtime-status] [35292] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.18.1","resolution":"/Users/tanaka/Desktop/20200601cloudfunctions/functions/node_modules/firebase-functions/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-northeast1-api"},"extension":{},"message":"[runtime-status] [35292] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"3.18.1\",\"resolution\":\"/Users/tanaka/Desktop/20200601cloudfunctions/functions/node_modules/firebase-functions/lib/index.js\"}"}}
+[debug] [2022-03-15T13:57:10.801Z] [runtime-status] [35292] Checked functions.config() {"config":{}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-northeast1-api"},"extension":{},"message":"[runtime-status] [35292] Checked functions.config() {\"config\":{}}"}}
+[debug] [2022-03-15T13:57:10.802Z] [runtime-status] [35292] firebase-functions has been stubbed. {"functionsResolution":{"declared":true,"installed":true,"version":"3.18.1","resolution":"/Users/tanaka/Desktop/20200601cloudfunctions/functions/node_modules/firebase-functions/lib/index.js"}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-northeast1-api"},"extension":{},"message":"[runtime-status] [35292] firebase-functions has been stubbed. {\"functionsResolution\":{\"declared\":true,\"installed\":true,\"version\":\"3.18.1\",\"resolution\":\"/Users/tanaka/Desktop/20200601cloudfunctions/functions/node_modules/firebase-functions/lib/index.js\"}}"}}
+[debug] [2022-03-15T13:57:10.802Z] [runtime-status] [35292] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.18.1","resolution":"/Users/tanaka/Desktop/20200601cloudfunctions/functions/node_modules/firebase-functions/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-northeast1-api"},"extension":{},"message":"[runtime-status] [35292] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"3.18.1\",\"resolution\":\"/Users/tanaka/Desktop/20200601cloudfunctions/functions/node_modules/firebase-functions/lib/index.js\"}"}}
+[debug] [2022-03-15T13:57:10.804Z] [runtime-status] [35292] Resolved module firebase-admin {"declared":true,"installed":true,"version":"10.0.2","resolution":"/Users/tanaka/Desktop/20200601cloudfunctions/functions/node_modules/firebase-admin/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-northeast1-api"},"extension":{},"message":"[runtime-status] [35292] Resolved module firebase-admin {\"declared\":true,\"installed\":true,\"version\":\"10.0.2\",\"resolution\":\"/Users/tanaka/Desktop/20200601cloudfunctions/functions/node_modules/firebase-admin/lib/index.js\"}"}}
+[debug] [2022-03-15T13:57:10.804Z] [runtime-status] [35292] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.18.1","resolution":"/Users/tanaka/Desktop/20200601cloudfunctions/functions/node_modules/firebase-functions/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-northeast1-api"},"extension":{},"message":"[runtime-status] [35292] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"3.18.1\",\"resolution\":\"/Users/tanaka/Desktop/20200601cloudfunctions/functions/node_modules/firebase-functions/lib/index.js\"}"}}
+[debug] [2022-03-15T13:57:10.805Z] [runtime-status] [35292] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"10.0.2","resolution":"/Users/tanaka/Desktop/20200601cloudfunctions/functions/node_modules/firebase-admin/lib/index.js"}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-northeast1-api"},"extension":{},"message":"[runtime-status] [35292] firebase-admin has been stubbed. {\"adminResolution\":{\"declared\":true,\"installed\":true,\"version\":\"10.0.2\",\"resolution\":\"/Users/tanaka/Desktop/20200601cloudfunctions/functions/node_modules/firebase-admin/lib/index.js\"}}"}}
+[debug] [2022-03-15T13:57:10.930Z] [runtime-status] [35292] Beginning invocation function api! {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-northeast1-api"},"extension":{},"message":"[runtime-status] [35292] Beginning invocation function api!"}}
+[info] i  functions: Beginning execution of "api" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-northeast1-api"},"extension":{},"message":"Beginning execution of \"api\""}}
+[debug] [2022-03-15T13:57:10.931Z] [runtime-status] [35292] Running api in signature http {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-northeast1-api"},"extension":{},"message":"[runtime-status] [35292] Running api in signature http"}}
+[debug] [2022-03-15T13:57:10.935Z] [runtime-status] [35292] Attempting to listen to socketPath: /var/folders/_j/hg5k97ln6_s_g__kzdm_9hjm0000gn/T/fire_emu_35292.sock {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-northeast1-api"},"extension":{},"message":"[runtime-status] [35292] Attempting to listen to socketPath: /var/folders/_j/hg5k97ln6_s_g__kzdm_9hjm0000gn/T/fire_emu_35292.sock"}}
+[debug] [2022-03-15T13:57:10.937Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2022-03-15T13:57:10.938Z] [functions] Got req.url=/cloudfunctions-a1e6e/asia-northeast1/api/weather, mapping to path=/weather {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/cloudfunctions-a1e6e/asia-northeast1/api/weather, mapping to path=/weather"}}
+[debug] [2022-03-15T13:57:10.943Z] [runtime-status] [35292] Ephemeral server handling GET request {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-northeast1-api"},"extension":{},"message":"[runtime-status] [35292] Ephemeral server handling GET request"}}
+[debug] [2022-03-15T13:57:10.948Z] [runtime-status] [35292] Ephemeral server survived. {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-northeast1-api"},"extension":{},"message":"[runtime-status] [35292] Ephemeral server survived."}}
+[warn] ⚠  External network resource requested!
+   - URL: "https://api.openweathermap.org/data/2.5/weather?q=Tokyo&appid=1a862e438c8ffc94c83732838961e74e&lang=ja&units=metricundefined"
+ - Be careful, this may be a production service. {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-northeast1-api"},"extension":{},"message":"External network resource requested!\n   - URL: \"https://api.openweathermap.org/data/2.5/weather?q=Tokyo&appid=1a862e438c8ffc94c83732838961e74e&lang=ja&units=metricundefined\"\n - Be careful, this may be a production service."}}
+[info] i  functions: Finished "api" in ~1s {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-northeast1-api"},"extension":{},"message":"Finished \"api\" in ~1s"}}
+[debug] [2022-03-15T13:57:11.586Z] [worker-asia-northeast1-api-ee39693a-2b24-4584-af8c-512bb7046211]: IDLE {"metadata":{"emulator":{"name":"functions"},"message":"[worker-asia-northeast1-api-ee39693a-2b24-4584-af8c-512bb7046211]: IDLE"}}
+[debug] [2022-03-15T13:57:11.586Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[debug] [2022-03-15T15:23:49.479Z] File /Users/tanaka/Desktop/20200601cloudfunctions/functions/index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/tanaka/Desktop/20200601cloudfunctions/functions/index.js changed, reloading triggers"}}
+[debug] [2022-03-15T15:23:50.481Z] [worker-pool] Shutting down IDLE worker (asia-northeast1-api) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] Shutting down IDLE worker (asia-northeast1-api)"}}
+[debug] [2022-03-15T15:23:50.481Z] [worker-asia-northeast1-api-ee39693a-2b24-4584-af8c-512bb7046211]: FINISHING {"metadata":{"emulator":{"name":"functions"},"message":"[worker-asia-northeast1-api-ee39693a-2b24-4584-af8c-512bb7046211]: FINISHING"}}
+[debug] [2022-03-15T15:23:50.485Z] Validating nodejs source
+[debug] [2022-03-15T15:23:52.789Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.3",
+    "firebase-admin": "^10.0.2",
+    "firebase-functions": "^3.18.0",
+    "request": "^2.88.2",
+    "request-promise-native": "^1.0.9"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^0.2.0"
+  },
+  "private": true
+}
+[debug] [2022-03-15T15:23:52.790Z] Building nodejs source
+[debug] [2022-03-15T15:23:52.790Z] Analyzing nodejs backend spec
+[debug] [2022-03-15T15:23:52.798Z] File /Users/tanaka/Desktop/20200601cloudfunctions/functions/index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/tanaka/Desktop/20200601cloudfunctions/functions/index.js changed, reloading triggers"}}
+[debug] [2022-03-15T15:23:52.801Z] [worker-asia-northeast1-api-ee39693a-2b24-4584-af8c-512bb7046211]: exited {"metadata":{"emulator":{"name":"functions"},"message":"[worker-asia-northeast1-api-ee39693a-2b24-4584-af8c-512bb7046211]: exited"}}
+[debug] [2022-03-15T15:23:52.802Z] [worker-asia-northeast1-api-ee39693a-2b24-4584-af8c-512bb7046211]: FINISHED {"metadata":{"emulator":{"name":"functions"},"message":"[worker-asia-northeast1-api-ee39693a-2b24-4584-af8c-512bb7046211]: FINISHED"}}
+[debug] [2022-03-15T15:23:53.802Z] Validating nodejs source
+[debug] [2022-03-15T15:23:55.261Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.3",
+    "firebase-admin": "^10.0.2",
+    "firebase-functions": "^3.18.0",
+    "request": "^2.88.2",
+    "request-promise-native": "^1.0.9"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^0.2.0"
+  },
+  "private": true
+}
+[debug] [2022-03-15T15:23:55.262Z] Building nodejs source
+[debug] [2022-03-15T15:23:55.262Z] Analyzing nodejs backend spec
+[debug] [2022-03-15T15:23:55.268Z] File /Users/tanaka/Desktop/20200601cloudfunctions/functions/index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/tanaka/Desktop/20200601cloudfunctions/functions/index.js changed, reloading triggers"}}
+[debug] [2022-03-15T15:23:55.997Z] File /Users/tanaka/Desktop/20200601cloudfunctions/functions/index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/tanaka/Desktop/20200601cloudfunctions/functions/index.js changed, reloading triggers"}}
+[debug] [2022-03-15T15:23:57.000Z] Validating nodejs source
+[debug] [2022-03-15T15:23:59.007Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.3",
+    "firebase-admin": "^10.0.2",
+    "firebase-functions": "^3.18.0",
+    "request": "^2.88.2",
+    "request-promise-native": "^1.0.9"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^0.2.0"
+  },
+  "private": true
+}
+[debug] [2022-03-15T15:23:59.008Z] Building nodejs source
+[debug] [2022-03-15T15:23:59.008Z] Analyzing nodejs backend spec
+[debug] [2022-03-15T15:23:59.018Z] File /Users/tanaka/Desktop/20200601cloudfunctions/functions/index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/tanaka/Desktop/20200601cloudfunctions/functions/index.js changed, reloading triggers"}}
+[debug] [2022-03-15T15:24:00.023Z] Validating nodejs source
+[debug] [2022-03-15T15:24:01.465Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.3",
+    "firebase-admin": "^10.0.2",
+    "firebase-functions": "^3.18.0",
+    "request": "^2.88.2",
+    "request-promise-native": "^1.0.9"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^0.2.0"
+  },
+  "private": true
+}
+[debug] [2022-03-15T15:24:01.466Z] Building nodejs source
+[debug] [2022-03-15T15:24:01.466Z] Analyzing nodejs backend spec
